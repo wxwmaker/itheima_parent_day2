@@ -1,0 +1,22 @@
+# 端口
+server.port: 8080
+# 应用名称
+spring.application.name: consumer-demo
+# 注册中心地址
+eureka.client.service-url.defaultZone: http://127.0.0.1:10086/eureka
+
+
+#手动开启feign客户端支持熔断器
+feign.hystrix.enabled: true # 开启Feign的熔断功能
+#请求压缩及响应压缩
+# 开启请求压缩
+feign.compression.request.enabled: true
+# 开启响应压缩
+feign.compression.response.enabled: true
+# 设置触发压缩的大小下限
+feign.compression.request.min-request-size: 2048
+# 设置压缩的数据类型
+feign.compression.request.mime-types: text/html,application/xml,application/json
+
+# com.itheima 包下的日志级别都为Debug
+logging.level.com.itheima: debug

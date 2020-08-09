@@ -1,0 +1,19 @@
+# 注册中心地址
+eureka.client.service-url.defaultZone: http://127.0.0.1:10086/eureka
+
+# 配置中心相关配置
+# 使用配置中心
+spring.cloud.config.discovery.enabled: true
+# 配置中心服务id
+spring.cloud.config.discovery.service-id: config-server
+# 与远程仓库中的配置文件的application和profile保持一致，{application}-{profile}.yml
+spring.cloud.config.name: user
+spring.cloud.config.profile: dev
+# 远程仓库中的分支保持一致
+spring.cloud.config.label: master
+
+# RabbitMQ的服务地址
+spring.rabbitmq.host: 192.168.100.128
+spring.rabbitmq.port: 5672
+spring.rabbitmq.username: guest
+spring.rabbitmq.password: guest

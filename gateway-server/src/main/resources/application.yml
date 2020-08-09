@@ -1,0 +1,25 @@
+# 端口
+server.port: 10010
+# 应用名
+spring.application.name: api-gateway 
+# 注册中心地址
+eureka.client.service-url.defaultZone: http://127.0.0.1:10086/eureka
+
+#路由转发规则
+spring:
+  cloud:
+    gateway:
+      # 路由si(集合)
+      routes:
+        # id唯一标识
+        - id: user-service-route
+          # 路由服务地址
+#         uri: http://127.0.0.1:9091
+          uri: lb://user-service
+          # 断言
+          predicates:
+            - Path=/**
+#          filters:
+#            - PrefixPath=/user
+          filters:
+             - StripPrefix=1

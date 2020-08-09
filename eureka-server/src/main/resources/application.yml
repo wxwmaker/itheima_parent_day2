@@ -1,0 +1,11 @@
+# 端口
+server.port: 10086
+# 应用名称，会在Eureka中作为服务的id标识（serviceId）
+spring.application.name: eureka-server
+# EurekaServer的地址，现在是自己的地址，如果是集群，需要写其它Server的地址。
+eureka.client.service-url.defaultZone: http://127.0.0.1:10086/eureka
+
+# 是否抓取注册列表
+eureka.client.fetch-registry: false
+# 是否注册服务中心Eureka
+eureka.client.register-with-eureka: false
